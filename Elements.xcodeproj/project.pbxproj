@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,18 @@
 		5A0845192486C39700BC0EDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0845182486C39700BC0EDB /* Assets.xcassets */; };
 		5A08451C2486C39700BC0EDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A08451B2486C39700BC0EDB /* Preview Assets.xcassets */; };
 		5A08451F2486C39700BC0EDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A08451D2486C39700BC0EDB /* LaunchScreen.storyboard */; };
+		5A08452E2486C3EB00BC0EDB /* ElementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */; };
+		5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B6BC8248B3872007EE626 /* StringExtension.swift */; };
+		5A1B6BCB248B5B01007EE626 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B6BCA248B5B01007EE626 /* .gitignore */; };
+		5A70C5E824870CC400D6D965 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */; };
+		5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EB248803A200D6D965 /* ElementView.swift */; };
+		5A70C5EE2488244E00D6D965 /* ElementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5ED2488244E00D6D965 /* ElementCellView.swift */; };
+		5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */; };
+		5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */; };
+		5A78AFC32489451700244B5F /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 5A78AFC22489451700244B5F /* ASCollectionView */; };
+		5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC52489C38700244B5F /* ColorExtension.swift */; };
+		5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC72489CF5100244B5F /* ViewModifiers.swift */; };
+		5A78AFD0248B261600244B5F /* PeriodicSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,17 @@
 		5A08451B2486C39700BC0EDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A08451E2486C39700BC0EDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A0845202486C39700BC0EDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsModel.swift; sourceTree = "<group>"; };
+		5A1B6BC8248B3872007EE626 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		5A1B6BCA248B5B01007EE626 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
+		5A70C5EB248803A200D6D965 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
+		5A70C5ED2488244E00D6D965 /* ElementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCellView.swift; sourceTree = "<group>"; };
+		5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewModel.swift; sourceTree = "<group>"; };
+		5A78AFC52489C38700244B5F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		5A78AFC72489CF5100244B5F /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicSquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A78AFC32489451700244B5F /* ASCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +64,7 @@
 		5A0845062486C39500BC0EDB = {
 			isa = PBXGroup;
 			children = (
+				5A1B6BCA248B5B01007EE626 /* .gitignore */,
 				5A0845112486C39500BC0EDB /* Elements */,
 				5A0845102486C39500BC0EDB /* Products */,
 			);
@@ -56,9 +81,12 @@
 		5A0845112486C39500BC0EDB /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				5A78AFC42489C37800244B5F /* Extensions */,
+				5A08452B2486C3E100BC0EDB /* Models */,
+				5A70C5E92487E94B00D6D965 /* ViewModel */,
 				5A0845122486C39500BC0EDB /* AppDelegate.swift */,
 				5A0845142486C39500BC0EDB /* SceneDelegate.swift */,
-				5A0845162486C39500BC0EDB /* ContentView.swift */,
+				5A70C5EA2488039800D6D965 /* Views */,
 				5A0845182486C39700BC0EDB /* Assets.xcassets */,
 				5A08451D2486C39700BC0EDB /* LaunchScreen.storyboard */,
 				5A0845202486C39700BC0EDB /* Info.plist */,
@@ -73,6 +101,45 @@
 				5A08451B2486C39700BC0EDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A08452B2486C3E100BC0EDB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */,
+				5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A70C5E92487E94B00D6D965 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */,
+				5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A70C5EA2488039800D6D965 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A0845162486C39500BC0EDB /* ContentView.swift */,
+				5A70C5ED2488244E00D6D965 /* ElementCellView.swift */,
+				5A70C5EB248803A200D6D965 /* ElementView.swift */,
+				5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A78AFC42489C37800244B5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A78AFC72489CF5100244B5F /* ViewModifiers.swift */,
+				5A78AFC52489C38700244B5F /* ColorExtension.swift */,
+				5A1B6BC8248B3872007EE626 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +158,9 @@
 			dependencies = (
 			);
 			name = Elements;
+			packageProductDependencies = (
+				5A78AFC22489451700244B5F /* ASCollectionView */,
+			);
 			productName = Elements;
 			productReference = 5A08450F2486C39500BC0EDB /* Elements.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 5A0845062486C39500BC0EDB;
+			packageReferences = (
+				5A78AFC12489451700244B5F /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+			);
 			productRefGroup = 5A0845102486C39500BC0EDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,9 +206,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1B6BCB248B5B01007EE626 /* .gitignore in Resources */,
 				5A08451F2486C39700BC0EDB /* LaunchScreen.storyboard in Resources */,
 				5A08451C2486C39700BC0EDB /* Preview Assets.xcassets in Resources */,
 				5A0845192486C39700BC0EDB /* Assets.xcassets in Resources */,
+				5A70C5E824870CC400D6D965 /* PeriodicTableJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +221,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A08452E2486C3EB00BC0EDB /* ElementsModel.swift in Sources */,
+				5A70C5EE2488244E00D6D965 /* ElementCellView.swift in Sources */,
+				5A78AFD0248B261600244B5F /* PeriodicSquareView.swift in Sources */,
 				5A0845132486C39500BC0EDB /* AppDelegate.swift in Sources */,
+				5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */,
+				5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */,
+				5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */,
+				5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */,
+				5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */,
 				5A0845152486C39500BC0EDB /* SceneDelegate.swift in Sources */,
 				5A0845172486C39500BC0EDB /* ContentView.swift in Sources */,
+				5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +426,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A78AFC12489451700244B5F /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apptekstudios/ASCollectionView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A78AFC22489451700244B5F /* ASCollectionView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A78AFC12489451700244B5F /* XCRemoteSwiftPackageReference "ASCollectionView" */;
+			productName = ASCollectionView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A0845072486C39500BC0EDB /* Project object */;
 }
