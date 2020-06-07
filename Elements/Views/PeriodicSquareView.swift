@@ -15,13 +15,15 @@ struct PeriodicSquareView: View {
     
     var body: some View {
         ZStack {
-            Text(element.symbol)
-                .font(.system(size: 40))
-            if element.atomicMass != nil {
-                Text(String(element.atomicMass!))
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
-                
-            }
+                Text(element.symbol)
+                    .bold()
+                    .font(.system(size: 40))
+            
+                if element.atomicMass != nil {
+                    Text(String(element.atomicMass!))
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
+                }
+
             VStack(alignment: .leading) {
                 Text("\(element.number)")
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)

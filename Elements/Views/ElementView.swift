@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ASCollectionView
 
 struct ElementView: View {
     
@@ -14,9 +15,10 @@ struct ElementView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ScrollView {
+            ScrollView(.vertical) {
                 VStack(alignment: .leading) {
                     
+                    // Title
                     HStack {
                         PeriodicSquareView(element: self.element, geo: geo)
                         VStack(alignment: .leading) {
@@ -29,241 +31,165 @@ struct ElementView: View {
                         }
                     }
                     
+                    // Group and Electronegativity
+                    // TODO: Align, start w/ hstack, then vstack
                     HStack {
-                        if self.element.melt != nil {
+                        VStack(alignment: .leading) {
+                            Text("group")
+                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                            Text("\(self.element.xpos)")
+                            
                             VStack(alignment: .leading) {
-                                Text("melting point")
+                                Text("phase")
                                     .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                                Text("\(self.element.melt!, specifier: "%.2f") °K")
+                                Text(self.element.phase.rawValue)
                             }
-                            Spacer()
+                        }
+                        Spacer()
+                        
+                        VStack(alignment: .leading) {
+                            if self.element.electronegativityPauling != nil {
+                                VStack(alignment: .leading) {
+                                    Text("e. negativity")
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    Text(String(format: "%g", self.element.electronegativityPauling!))
+                                }
+                                
+                            }
+                            if self.element.melt != nil {
+                                VStack(alignment: .leading) {
+                                    Text("melt point")
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    Text(String(format: "%g", self.element.melt!) + " °K")
+                                }
+                            }
+                        }
+                        Spacer()
+                        
+                        VStack(alignment: .leading) {
+                            if self.element.density != nil {
+                                VStack(alignment: .leading) {
+                                    Text("density")
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    Text(String(format: "%g", self.element.density!) + " g/L")
+                                }
+                            }
+                            if self.element.boil != nil {
+                                VStack(alignment: .leading) {
+                                    Text("boil point")
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    Text(String(format: "%g", self.element.boil!) + " °K")
+                                }
+                            }
+                        }
+                        Spacer()
+                    }
+                    
+                    
+                    Group {
+                        if self.element.appearance != nil {
+                            Group {
+                                Text("appearance")
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                Text(self.element.appearance!.capitalizingFirstLetter())
+                            }
                         }
                         
-                        if self.element.boil != nil {
-                            VStack(alignment: .leading) {
-                                Text("boiling point")
+                        if self.element.color != nil {
+                            Group {
+                                Text("color")
                                     .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                                Text("\(self.element.boil!, specifier: "%.2f") °K")
+                                Text(self.element.color!.capitalized)
                             }
-                            Spacer()
-                        }
-                        if self.element.molarHeat != nil {
-                            VStack(alignment: .leading) {
-                                Text("molar heat")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                                Text("\(self.element.molarHeat!, specifier: "%.2f") J/mol·K")
-                            }
-                            Spacer()
                         }
                         
-                    }
-                    
-                    if self.element.appearance != nil {
-                        Group {
-                            Text("appearance")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                            Text(self.element.appearance!.capitalizingFirstLetter())
-                        }
-                    }
-                    
-                    if self.element.color != nil {
-                        Group {
-                            Text("color")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                            Text(self.element.color!.capitalized)
-                        }
-                    }
-                    
-                    if self.element.electronConfiguration != nil {
-                        Group {
-                            Text("electron configuration")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                        Text("electron configuration")
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                        
+                        if self.element.electronConfiguration != nil {
                             Text(formatElectronConfiguration(self.element.electronConfiguration!))
                         }
+                        
+                        ShellView(element: self.element, geo: geo)
+                            .padding(.top)
                     }
-                    
                     Group {
                         Text("summary")
                             .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                         Text(self.element.summary)
                     }
                     
-                    if self.element.discoveredBy != nil {
-                        Group {
-                            Text("discovered by")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                            Text(self.element.discoveredBy!.capitalized)
-                        }
-                    }
-                    
-                    if self.element.namedBy != nil {
-                        Group {
-                            Text("named by")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                            Text(self.element.namedBy!.capitalized)
-                        }
-                    }
-                    
                     Group {
+                        if self.element.discoveredBy != nil {
+                            Group {
+                                Text("discovered by")
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                Text(self.element.discoveredBy!.capitalized)
+                            }
+                        }
+                        
+                        if self.element.namedBy != nil {
+                            Group {
+                                Text("named by")
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                Text(self.element.namedBy!.capitalized)
+                            }
+                        }
+                    }
+                    
+                    VStack(alignment: .leading) {
                         Text("learn more")
                             .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                        Text(self.element.source)
+                        Button(action: {
+                            guard let url = URL(string: self.element.source) else {return}
+                            UIApplication.shared.open(url)
+                        }) {
+                            HStack {
+                                Text(self.element.source)
+                                Image(systemName: "arrow.up.right.square")
+                                    .padding(0)
+                            }
+                        }
+                        .padding(.bottom)
                     }
-                    
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                
-                
-                
+                .padding()
             }
-            .padding()
+            
         }
-        
-        // Numbers
-        //        GeometryReader { geo in
-        //            HStack {
-        //                Spacer()
-        //                if (self.element.atomicMass != nil) {
-        //                    ElementViewPill(description1: "atomic",
-        //                                    description2: "weight",
-        //                                    value: String(self.element.atomicMass!),
-        //                                    color: self.backgroundColor)
-        //                    Spacer()
-        //                    Divider()
-        //                        .frame(maxHeight: geo.size.height * 0.5)
-        //                    Spacer()
-        //                }
-        //
-        //                ElementViewPill(description1: "Phase",
-        //                                description2: nil,
-        //                                value: self.element.phase.rawValue,
-        //                                color: self.backgroundColor)
-        //                Spacer()
-        //                // melting point
-        //                // boiling point
-        //            }
-        //        }
-        //
-        //        VStack(alignment: .leading) {
-        //            Text("room temp state")
-        //                .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //            Text(String(self.element.phase.rawValue).capitalized)
-        //        }
-        //        VStack(alignment: .leading) {
-        //            Text("category")
-        //                .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //            Text(String(self.element.category).capitalized)
-        //        }
-        //
-        //
-        //
-        //        // People
-        //        HStack {
-        //            if (self.element.discoveredBy != nil) {
-        //                VStack(alignment: .leading) {
-        //                    Text("discovered by")
-        //                        .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //                    Text(self.element.discoveredBy!)
-        //                }
-        //            }
-        //
-        //            Spacer()
-        //
-        //            if (self.element.namedBy != nil) {
-        //                VStack(alignment: .leading) {
-        //                    Text("named by")
-        //                        .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //                    Text(self.element.namedBy!)
-        //                }
-        //            }
-        //            Spacer()
-        //        }
-        //
-        //        // Categorization
-        //        HStack {
-        //
-        //            if (self.element.appearance != nil) {
-        //                VStack(alignment: .leading) {
-        //                    Text("color")
-        //                        .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //                    Text(String(self.element.appearance!).capitalized)
-        //                }
-        //            }
-        //            Spacer()
-        //        }
-        //
-        //
-        //
-        //        Group {
-        //
-        //            if (self.element.boil != nil) {
-        //                Text("Boiling Point")
-        //                    .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //                Text("\(self.element.boil!)")
-        //            }
-        //
-        //            if (self.element.color != nil) {
-        //                Text(self.element.color!)
-        //            }
-        //            if (self.element.density != nil) {
-        //                Text("\(self.element.density!)")
-        //            }
-        //
-        //
-        //            if (self.element.molarHeat != nil) {
-        //                Text("\(self.element.molarHeat!)")
-        //            }
-        //        }
-        //        Group {
-        //            if (self.element.electronConfiguration != nil) {
-        //                Text(self.element.electronConfiguration!)
-        //            }
-        //            if (self.element.electronAffinity != nil) {
-        //                Text("\(self.element.electronAffinity!)")
-        //            }
-        //            if (self.element.electronegativityPauling != nil) {
-        //                Text("\(self.element.electronegativityPauling!)")
-        //            }
-        //        }
-        //
-        //        Group {
-        //            Text("summary")
-        //                .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //            Text(self.element.summary)
-        //            Text("source")
-        //                .modifier(ElementInfoHeading(color: self.backgroundColor))
-        //            Text(self.element.source)
-        //        }
-        //    }
-        //    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-        //    .padding()
-        //}
-        //    }
+        .navigationBarTitle(Text(self.element.name), displayMode: .inline)
     }
 }
 
-struct ElementViewPill: View {
+func createGroupModel(_ element: Element) -> [GroupModel] {
+    var groupModel = [GroupModel]()
     
-    let description1: String
-    let description2: String?
-    let value: String
-    let color: Color
+    groupModel.append(GroupModel(title: "State", value: element.phase.rawValue))
     
-    var body: some View {
-        VStack {
-            Text(value)
-                .font(.title)
-            Text(description1)
-                .foregroundColor(color)
-            if description2 != nil {
-                Text(description2!)
-                    .foregroundColor(color)
-            }
-        }
-        .font(Font.body.smallCaps())
-        
+    if let boil = element.boil {
+        groupModel.append(GroupModel(title: "Boil", value: String(format: "%g", boil)))
     }
+    
+    if let melt = element.melt {
+        groupModel.append(GroupModel(title: "Melt", value: String(format: "%g", melt)))
+    }
+    
+    if let molarHeat = element.molarHeat {
+        groupModel.append(GroupModel(title: "Molar Heat", value: String(format: "%g", molarHeat) + " J/mol·K"))
+    }
+    
+    if let density = element.density {
+        groupModel.append(GroupModel(title: "Density", value: String(format: "%g", density) + " g/L"))
+    }
+    
+    //electronaffinity
+    //elecronegativitypualing
+    
+    return groupModel
 }
+
+
 
 struct ElementView_Previews: PreviewProvider {
     static var previews: some View {

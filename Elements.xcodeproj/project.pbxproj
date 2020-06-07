@@ -16,6 +16,7 @@
 		5A08452E2486C3EB00BC0EDB /* ElementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */; };
 		5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B6BC8248B3872007EE626 /* StringExtension.swift */; };
 		5A1B6BCB248B5B01007EE626 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B6BCA248B5B01007EE626 /* .gitignore */; };
+		5A1B6BCD248B5D92007EE626 /* ShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B6BCC248B5D92007EE626 /* ShellView.swift */; };
 		5A70C5E824870CC400D6D965 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */; };
 		5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EB248803A200D6D965 /* ElementView.swift */; };
 		5A70C5EE2488244E00D6D965 /* ElementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5ED2488244E00D6D965 /* ElementCellView.swift */; };
@@ -25,6 +26,8 @@
 		5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC52489C38700244B5F /* ColorExtension.swift */; };
 		5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC72489CF5100244B5F /* ViewModifiers.swift */; };
 		5A78AFD0248B261600244B5F /* PeriodicSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */; };
+		5AD81AB0248C41A900E7DB5D /* NumberGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81AAF248C41A900E7DB5D /* NumberGrid.swift */; };
+		5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,7 @@
 		5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsModel.swift; sourceTree = "<group>"; };
 		5A1B6BC8248B3872007EE626 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5A1B6BCA248B5B01007EE626 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5A1B6BCC248B5D92007EE626 /* ShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellView.swift; sourceTree = "<group>"; };
 		5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
 		5A70C5EB248803A200D6D965 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		5A70C5ED2488244E00D6D965 /* ElementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCellView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		5A78AFC52489C38700244B5F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5A78AFC72489CF5100244B5F /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicSquareView.swift; sourceTree = "<group>"; };
+		5AD81AAF248C41A900E7DB5D /* NumberGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGrid.swift; sourceTree = "<group>"; };
+		5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */,
+				5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */,
 				5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */,
 			);
 			path = Models;
@@ -128,6 +135,8 @@
 				5A70C5ED2488244E00D6D965 /* ElementCellView.swift */,
 				5A70C5EB248803A200D6D965 /* ElementView.swift */,
 				5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */,
+				5A1B6BCC248B5D92007EE626 /* ShellView.swift */,
+				5AD81AAF248C41A900E7DB5D /* NumberGrid.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,9 +236,12 @@
 				5A0845132486C39500BC0EDB /* AppDelegate.swift in Sources */,
 				5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */,
 				5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */,
+				5AD81AB0248C41A900E7DB5D /* NumberGrid.swift in Sources */,
+				5A1B6BCD248B5D92007EE626 /* ShellView.swift in Sources */,
 				5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */,
 				5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */,
 				5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */,
+				5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */,
 				5A0845152486C39500BC0EDB /* SceneDelegate.swift in Sources */,
 				5A0845172486C39500BC0EDB /* ContentView.swift in Sources */,
 				5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */,
@@ -304,6 +316,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-Xfrontend -warn-long-expression-type-checking=150 -Xfrontend -warn-long-function-bodies=150";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -357,6 +371,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -380,7 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lorenzolewis.Elements;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -400,7 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lorenzolewis.Elements;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

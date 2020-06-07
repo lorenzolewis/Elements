@@ -11,6 +11,7 @@ import SwiftUI
 struct ElementCellView: View {
     
     let element: Element
+    let color: Color
     
     var body: some View {
         NavigationLink(destination: ElementView(element: element)) {
@@ -27,7 +28,7 @@ struct ElementCellView: View {
                         .lineLimit(1)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.pink)
+                .background(color)
                 Text("\(self.element.number)")
                     .padding(5)
             }

@@ -79,32 +79,32 @@ func formatElectronConfiguration(_ electronConfiguration: String) -> String {
     
     
     for int in 0...9 {
-        let regexFirstDigit = try! NSRegularExpression(pattern: String("(?<=[a-z])" + "\(int)"))
-        formatted = regexFirstDigit.stringByReplacingMatches(in: formatted,  range: NSRange(0..<formatted.utf16.count), withTemplate: unicodeDictionary[int]!)
-        
         let regexSecondDigit = try! NSRegularExpression(pattern: String(#"(?<=[a-z]\d)"# + "\(int)"))
         formatted = regexSecondDigit.stringByReplacingMatches(in: formatted,  range: NSRange(0..<formatted.utf16.count), withTemplate: unicodeDictionary[int]!)
+        
+        let regexFirstDigit = try! NSRegularExpression(pattern: String("(?<=[a-z])" + "\(int)"))
+        formatted = regexFirstDigit.stringByReplacingMatches(in: formatted,  range: NSRange(0..<formatted.utf16.count), withTemplate: unicodeDictionary[int]!)
     }
     
     return formatted
 }
 
-let elementColor: [String:Color] = [
-    "diatomic nonmetal" : Color(hex: "174255"),
-    "noble gas" : Color(hex: "187170"),
-    "alkali metal" : Color(hex: "199889"),
-    "alkaline earth metal" : Color(hex: "35AC79"),
-    "metalloid" : Color(hex: "69C34A"),
-    "polyatomic nonmetal" : Color(hex: "EDBB3E"),
-    "post-transition metal" : Color(hex: "EF953C"),
-    "transition metal" : Color(hex: "F26D2F"),
-    "lanthanide" : Color(hex: "ED512B"),
-    "actinide" : Color(hex: "EF6746"),
-    "unknown, probably transition metal" : Color(hex: "EE7841"),
-    "unknown, probably post-transition metal" : Color(hex: "EC9B49"),
-    "unknown, probably metalloid" : Color(hex: "77B562"),
-    "unknown, predicted to be noble gas" : Color(hex: "1F6F6E"),
-    "unknown, but predicted to be an alkali metal" : Color(hex: "21988A")
+let elementColor: [String : Color] = [
+    "diatomic non-metal" : Color(hex: "F28B5C"),
+    "noble gas" : Color(hex: "E75D8D"),
+    "alkali metal" : Color(hex: "235467"),
+    "alkaline earth metal" : Color(hex: "238483"),
+    "metalloid" : Color(hex: "EF5050"),
+    "polyatomic non-metal" : Color(hex: "EA4F4F"),
+    "post-transition metal" : Color(hex: "87C273"),
+    "transition metal" : Color(hex: "24AF9F"),
+    "lanthanide" : Color(hex: "EEC86A"),
+    "actinide" : Color(hex: "F28B5C"),
+    "unknown, probably transition metal" : Color(hex: "24AF9F"),
+    "unknown, probably post-transition metal" : Color(hex: "87C273"),
+    "unknown, probably metalloid" : Color(hex: "EF5050"),
+    "unknown, predicted to be noble gas" : Color(hex: "E75D8D"),
+    "unknown, but predicted to be an alkali metal" : Color(hex: "235467")
 ]
 
 public struct ElementsArray: Decodable {
