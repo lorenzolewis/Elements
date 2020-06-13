@@ -106,8 +106,12 @@ struct ElementView: View {
                         Text("electron configuration")
                             .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                         
-                        if self.element.electronConfiguration != nil {
-                            Text(formatElectronConfiguration(self.element.electronConfiguration!))
+                        if self.element.electronConfigurationSemantic != nil {
+                            Text(formatElectronConfiguration(self.element.electronConfigurationSemantic!))
+                            if self.element.electronConfigurationSemantic!.contains("*") {
+                                Text("(Configuration not yet confirmed)")
+                                    .foregroundColor(.secondary)
+                            }
                         }
                         
                         ShellView(element: self.element, geo: geo)
@@ -226,6 +230,6 @@ struct ElementView_Previews: PreviewProvider {
                                         13326.5,
                                         71330,
                                         84078.0
-        ]))
+        ], electronConfigurationSemantic: "s1s"))
     }
 }

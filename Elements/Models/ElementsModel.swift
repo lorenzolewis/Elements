@@ -54,32 +54,10 @@ func formatElectronConfiguration(_ electronConfiguration: String) -> String {
         7 : "\u{2077}",
         8 : "\u{2078}",
         9 : "\u{2079}"
-    ]
-    
-    let argon = "1s2 2s2 2p6 3s2 3p6 "
-    let krypton = argon + "3d10 4s2 4p6 "
-    let xenon = krypton + "4d10 5s2 5p6 "
-    let radon = xenon + "4f14 5d10 6s2 6p6 "
-    
-    while formatted.starts(with: radon) {
-        formatted = formatted.replacingOccurrences(of: argon, with: "[Rn] ")
-    }
-    
-    while formatted.starts(with: xenon) {
-        formatted = formatted.replacingOccurrences(of: argon, with: "[Xe] ")
-    }
-    
-    while formatted.starts(with: krypton) {
-        formatted = formatted.replacingOccurrences(of: argon, with: "[Kr] ")
-    }
-    
-    while formatted.starts(with: argon) {
-        formatted = formatted.replacingOccurrences(of: argon, with: "[Ar] ")
-    }
-    
+    ]    
     
     for int in 0...9 {
-        let regexSecondDigit = try! NSRegularExpression(pattern: String(#"(?<=[a-z]\d)"# + "\(int)"))
+        let regexSecondDigit = try! NSRegularExpression(pattern: String("\(int)" + #"(?=[\s]|$)"#))
         formatted = regexSecondDigit.stringByReplacingMatches(in: formatted,  range: NSRange(0..<formatted.utf16.count), withTemplate: unicodeDictionary[int]!)
         
         let regexFirstDigit = try! NSRegularExpression(pattern: String("(?<=[a-z])" + "\(int)"))
@@ -91,20 +69,20 @@ func formatElectronConfiguration(_ electronConfiguration: String) -> String {
 
 let elementColor: [String : Color] = [
     "diatomic non-metal" : Color(hex: "F28B5C"),
-    "noble gas" : Color(hex: "E75D8D"),
-    "alkali metal" : Color(hex: "235467"),
-    "alkaline earth metal" : Color(hex: "238483"),
+    "noble gas" : Color("nobleGasses"),
+    "alkali metal" : Color("alkaliMetals"),
+    "alkaline earth metal" : Color("alkalineEarthMetals"),
     "metalloid" : Color(hex: "EF5050"),
     "polyatomic non-metal" : Color(hex: "EA4F4F"),
     "post-transition metal" : Color(hex: "87C273"),
-    "transition metal" : Color(hex: "24AF9F"),
-    "lanthanide" : Color(hex: "EEC86A"),
-    "actinide" : Color(hex: "F28B5C"),
-    "unknown, probably transition metal" : Color(hex: "24AF9F"),
+    "transition metal" : Color("transitionMetals"),
+    "lanthanide" : Color("lanthanoids"),
+    "actinide" : Color("actinoids"),
+    "unknown, probably transition metal" : Color("transitionMetals"),
     "unknown, probably post-transition metal" : Color(hex: "87C273"),
     "unknown, probably metalloid" : Color(hex: "EF5050"),
-    "unknown, predicted to be noble gas" : Color(hex: "E75D8D"),
-    "unknown, but predicted to be an alkali metal" : Color(hex: "235467")
+    "unknown, predicted to be noble gas" : Color("nobleGasses"),
+    "unknown, but predicted to be an alkali metal" : Color("alkaliMetals")
 ]
 
 public struct ElementsArray: Decodable {
@@ -133,6 +111,7 @@ public struct Element: Decodable, Identifiable {
     let electronConfiguration: String?
     let electronAffinity, electronegativityPauling: Double?
     let ionizationEnergies: [Double]?
+    let electronConfigurationSemantic: String?
 }
 
 enum Phase: String, Decodable {
