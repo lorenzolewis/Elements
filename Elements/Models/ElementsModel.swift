@@ -67,6 +67,31 @@ func formatElectronConfiguration(_ electronConfiguration: String) -> String {
     return formatted
 }
 
+func formatTemperature(_ temp: Double) -> String {
+    if let unit = UserDefaults.standard.object(forKey: "TempatureUnit") as? Int {
+        switch unit {
+        case 0:
+            return String(temp) + " °K"
+        case 1:
+            return String(kelvinToCelcius(temp)) + " °C"
+        case 2:
+            return String(kelvinToFahrenheit(temp)) + " °F"
+        default:
+            return String(temp) + " °K"
+        }
+    } else {
+        return String(temp) + " °K"
+    }
+}
+
+private func kelvinToCelcius(_ temp: Double) -> Double {
+    return temp - 273.15
+}
+
+private func kelvinToFahrenheit(_ temp: Double) -> Double {
+    return temp * 1.8 - 459.67
+}
+
 let elementColor: [String : Color] = [
     "diatomic non-metal" : Color(hex: "F28B5C"),
     "noble gas" : Color("nobleGasses"),

@@ -60,7 +60,7 @@ struct ElementView: View {
                                 VStack(alignment: .leading) {
                                     Text("melt point")
                                         .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                                    Text(String(format: "%g", self.element.melt!) + " °K")
+                                    Text(formatTemperature(self.element.melt!))
                                 }
                             }
                         }
@@ -78,7 +78,7 @@ struct ElementView: View {
                                 VStack(alignment: .leading) {
                                     Text("boil point")
                                         .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                                    Text(String(format: "%g", self.element.boil!) + " °K")
+                                    Text(formatTemperature(self.element.boil!))
                                 }
                             }
                         }
