@@ -57,7 +57,7 @@ struct SettingsView: View {
                         }
                     }
                 }
-                .navigationBarTitle("🙏 Credits", displayMode: .inline)
+                .navigationBarTitle("Settings", displayMode: .inline)
             }
         }
     }

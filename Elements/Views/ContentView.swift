@@ -33,7 +33,8 @@ struct ContentView: View {
                     print("Hello")
                 }) {
                     HStack {
-                        Text("🙏 Credits")
+                        Image(systemName: "gear")
+                        Text("Settings")
                     }
                     .sheet(isPresented: $showSheet, content: {
                         SettingsView()
