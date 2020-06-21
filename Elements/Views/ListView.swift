@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ListView.swift
 //  Elements
 //
 //  Created by Lorenzo Lewis on 6/2/20.
@@ -9,7 +9,7 @@
 import SwiftUI
 import ASCollectionView
 
-struct ContentView: View {
+struct ListView: View {
     
     private let elements = ElementsModel()
     @State private var showSheet = false
@@ -48,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ListView()
     }
 }
