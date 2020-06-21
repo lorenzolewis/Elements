@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class SettingsViewModel: ObservableObject {
+class SettingsViewModel {
     @Published var selectedUnit: Int {
         didSet {
             UserDefaults.standard.set(selectedUnit, forKey: "TempatureUnit")
