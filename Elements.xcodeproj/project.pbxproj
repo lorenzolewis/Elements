@@ -20,7 +20,6 @@
 		5A70C5E824870CC400D6D965 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */; };
 		5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EB248803A200D6D965 /* ElementView.swift */; };
 		5A70C5EE2488244E00D6D965 /* ElementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5ED2488244E00D6D965 /* ElementCellView.swift */; };
-		5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */; };
 		5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */; };
 		5A78AFC32489451700244B5F /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 5A78AFC22489451700244B5F /* ASCollectionView */; };
 		5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC52489C38700244B5F /* ColorExtension.swift */; };
@@ -50,7 +49,6 @@
 		5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
 		5A70C5EB248803A200D6D965 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		5A70C5ED2488244E00D6D965 /* ElementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCellView.swift; sourceTree = "<group>"; };
-		5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewModel.swift; sourceTree = "<group>"; };
 		5A78AFC52489C38700244B5F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5A78AFC72489CF5100244B5F /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 		5A70C5E92487E94B00D6D965 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */,
 				5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */,
 				5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */,
 			);
@@ -261,7 +258,6 @@
 				5AD81AB0248C41A900E7DB5D /* NumberGrid.swift in Sources */,
 				5A1B6BCD248B5D92007EE626 /* ShellView.swift in Sources */,
 				5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */,
-				5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */,
 				5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */,
 				5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */,
 				5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */,
