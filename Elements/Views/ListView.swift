@@ -40,9 +40,8 @@ struct ListView: View {
                         SettingsView()
                     })
                 }
-                
-            )}
-        
+            )
+        }
     }
 }
 
