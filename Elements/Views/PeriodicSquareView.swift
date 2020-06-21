@@ -34,7 +34,7 @@ struct PeriodicSquareView: View {
         .foregroundColor(.white)
         .padding(5)
         .frame(width: geo.size.width * 0.25, height: 100)
-        .background(elementColor[element.category])
+        .background(elementColor[element.category] ?? Color.black)
     }
 }
 

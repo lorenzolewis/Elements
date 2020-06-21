@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ASCollectionView(data: elements.elements) { item, _  in
-                ElementCellView(element: item, color: elementColor[item.category]!)
+                ElementCellView(element: item, color: elementColor[item.category] ?? Color.black)
             }
             .layout {
                 .grid(layoutMode: .adaptive(withMinItemSize: 100),

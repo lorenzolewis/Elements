@@ -36,12 +36,12 @@ struct ElementView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("group")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                             Text("\(self.element.xpos)")
                             
                             VStack(alignment: .leading) {
                                 Text("phase")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                 Text(self.element.phase.rawValue)
                             }
                         }
@@ -51,7 +51,7 @@ struct ElementView: View {
                             if self.element.electronegativityPauling != nil {
                                 VStack(alignment: .leading) {
                                     Text("e. negativity")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                     Text(String(format: "%g", self.element.electronegativityPauling!))
                                 }
                                 
@@ -59,7 +59,7 @@ struct ElementView: View {
                             if self.element.melt != nil {
                                 VStack(alignment: .leading) {
                                     Text("melt point")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                     Text(formatTemperature(self.element.melt!))
                                 }
                             }
@@ -70,14 +70,14 @@ struct ElementView: View {
                             if self.element.density != nil {
                                 VStack(alignment: .leading) {
                                     Text("density")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                     Text(String(format: "%g", self.element.density!) + " g/L")
                                 }
                             }
                             if self.element.boil != nil {
                                 VStack(alignment: .leading) {
                                     Text("boil point")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                     Text(formatTemperature(self.element.boil!))
                                 }
                             }
@@ -90,7 +90,7 @@ struct ElementView: View {
                         if self.element.appearance != nil {
                             Group {
                                 Text("appearance")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                 Text(self.element.appearance!.capitalizingFirstLetter())
                             }
                         }
@@ -98,14 +98,14 @@ struct ElementView: View {
                         if self.element.color != nil {
                             Group {
                                 Text("color")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                 Text(self.element.color!.capitalized)
                             }
                         }
                         
                         Text("electron configuration")
-                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
-                        
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+
                         if self.element.electronConfigurationSemantic != nil {
                             Text(formatElectronConfiguration(self.element.electronConfigurationSemantic!))
                             if self.element.electronConfigurationSemantic!.contains("*") {
@@ -119,7 +119,7 @@ struct ElementView: View {
                     }
                     Group {
                         Text("summary")
-                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                         Text(self.element.summary)
                     }
                     
@@ -127,7 +127,7 @@ struct ElementView: View {
                         if self.element.discoveredBy != nil {
                             Group {
                                 Text("discovered by")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                 Text(self.element.discoveredBy!.capitalized)
                             }
                         }
@@ -135,7 +135,7 @@ struct ElementView: View {
                         if self.element.namedBy != nil {
                             Group {
                                 Text("named by")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                                 Text(self.element.namedBy!.capitalized)
                             }
                         }
@@ -143,7 +143,7 @@ struct ElementView: View {
                     
                     VStack(alignment: .leading) {
                         Text("learn more")
-                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
                         Button(action: {
                             guard let url = URL(string: self.element.source) else {return}
                             UIApplication.shared.open(url)
