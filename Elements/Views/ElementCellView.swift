@@ -39,3 +39,9 @@ struct ElementCellView: View {
     }
     
 }
+
+struct ElementCellView_Previews: PreviewProvider {
+    static var previews: some View {
+        ElementCellView(element: ElementsModel().elements[30], color: .black)
+    }
+}

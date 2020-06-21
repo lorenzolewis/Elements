@@ -20,7 +20,7 @@ struct ElementView: View {
                     
                     // Title
                     HStack {
-                        PeriodicSquareView(element: self.element, geo: geo)
+                        PeriodicSquareView(element: self.element)
                         VStack(alignment: .leading) {
                             Text(self.element.name)
                                 .bold()
@@ -168,39 +168,6 @@ struct ElementView: View {
 
 struct ElementView_Previews: PreviewProvider {
     static var previews: some View {
-        ElementView(element: Element(name: "Oxygen",
-                                     appearance: "beautiful mustard gas",
-                                     atomicMass: 15.999,
-                                     boil: 90.188,
-                                     category: "diatomic nonmetal but I like to be complicated",
-                                     color: "yellow",
-                                     density: 1.429,
-                                     discoveredBy: "Carl Wilhelm Scheele",
-                                     melt: 54.36,
-                                     molarHeat: nil,
-                                     namedBy: "Antoine Lavoisier",
-                                     number: 8,
-                                     period: 2,
-                                     phase: .Gas,
-                                     source: "https://en.wikipedia.org/wiki/Oxygen",
-                                     spectralImg: "https://en.wikipedia.org/wiki/File:Oxygen_spectre.jpg",
-                                     summary: "Oxygen is a chemical but I'm not going to stop there because I need to test how many lines I can fit into this baby while keeping it still beautiful and pristine!",
-                                     symbol: "O",
-                                     xpos: 16,
-                                     ypos: 2,
-                                     shells: [2, 6],
-                                     electronConfiguration: "1s2 2s2 2p4",
-                                     electronAffinity: 140.9760,
-                                     electronegativityPauling: 3.44,
-                                     ionizationEnergies: [
-                                        1313.9,
-                                        3388.3,
-                                        5300.5,
-                                        7469.2,
-                                        10989.5,
-                                        13326.5,
-                                        71330,
-                                        84078.0
-        ], electronConfigurationSemantic: "s1s"))
+        ElementView(element: ElementsModel().elements[30])
     }
 }
