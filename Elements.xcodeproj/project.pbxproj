@@ -28,7 +28,6 @@
 		5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEE0D92491232C003C144D /* UpdateManager.swift */; };
 		5ABEE0DE2491238F003C144D /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABEE0DD2491238F003C144D /* SwiftyBeaver */; };
 		5AD81AB0248C41A900E7DB5D /* NumberGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81AAF248C41A900E7DB5D /* NumberGrid.swift */; };
-		5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */; };
 		5AFCBCC42496731D0051BF3C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCBCC32496731D0051BF3C /* SettingsView.swift */; };
 		5AFCBCC6249673BC0051BF3C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		5A78AFCF248B261600244B5F /* PeriodicSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicSquareView.swift; sourceTree = "<group>"; };
 		5ABEE0D92491232C003C144D /* UpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		5AD81AAF248C41A900E7DB5D /* NumberGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGrid.swift; sourceTree = "<group>"; };
-		5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		5AFCBCC32496731D0051BF3C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				5A08452D2486C3EB00BC0EDB /* ElementsModel.swift */,
-				5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */,
 				5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */,
 			);
 			path = Models;
@@ -259,7 +256,6 @@
 				5A1B6BCD248B5D92007EE626 /* ShellView.swift in Sources */,
 				5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */,
 				5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */,
-				5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */,
 				5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */,
 				5A0845152486C39500BC0EDB /* SceneDelegate.swift in Sources */,
 				5A0845172486C39500BC0EDB /* ListView.swift in Sources */,
