@@ -42,7 +42,7 @@ struct ElementView: View {
                             VStack(alignment: .leading) {
                                 Text("phase")
                                     .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
-                                Text(self.element.phase.rawValue)
+                                Text(self.element.phase)
                             }
                         }
                         Spacer()
@@ -107,7 +107,7 @@ struct ElementView: View {
                             .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
 
                         if self.element.electronConfigurationSemantic != nil {
-                            Text(formatElectronConfiguration(self.element.electronConfigurationSemantic!))
+                            Text(self.element.electronConfigurationSemantic!)
                             if self.element.electronConfigurationSemantic!.contains("*") {
                                 Text("(Configuration not yet confirmed)")
                                     .foregroundColor(.secondary)
