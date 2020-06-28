@@ -12,7 +12,7 @@ public struct Element: Decodable, Identifiable {
     public let id = UUID()
     let name: String
     let appearance: String?
-    let atomicMass: Double?
+    let atomicMass: Double
     let boil: Double?
     let category: String
     let color: String?
@@ -123,8 +123,3 @@ let elementColor: [String : Color] = [
     "unknown, predicted to be noble gas" : Color("nobleGasses"),
     "unknown, but predicted to be an alkali metal" : Color("alkaliMetals")
 ]
-
-
-
-
-
