@@ -17,33 +17,34 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             ASCollectionView(data: elements.elements) { item, _  in
-                ElementCellView(element: item, color: elementColor[item.category] ?? Color.black)
+                NavigationLink(destination: ElementView(element: item)) {
+                    SquareView(element: item, showAtomicNumber: true, showName: true, showAtomicMass: false)
+                }
             }
             .layout {
-                .grid(layoutMode: .adaptive(withMinItemSize: 100),
-                      itemSpacing: 5,
-                      lineSpacing: 5,
-                      itemSize: .absolute(100))
+                .grid(layoutMode: .adaptive(withMinItemSize: 100))
             }
+            
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("🧪 Elements")
             .navigationBarItems(trailing:
-                Button(action: {
-                    self.showSheet.toggle()
-                    print("Hello")
-                }) {
-                    HStack {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-                    .sheet(isPresented: $showSheet, content: {
-                        SettingsView()
-                    })
-                }
+                                    Button(action: {
+                                        self.showSheet.toggle()
+                                        print("Hello")
+                                    }) {
+                                        HStack {
+                                            Image(systemName: "gear")
+                                            Text("Settings")
+                                        }
+                                        .sheet(isPresented: $showSheet, content: {
+                                            SettingsView()
+                                        })
+                                    }
             )
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

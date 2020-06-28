@@ -20,7 +20,8 @@ struct ElementView: View {
                     
                     // Title
                     HStack {
-                        PeriodicSquareView(element: self.element)
+                        SquareView(element: element, showAtomicNumber: true, showName: false, showAtomicMass: true)
+                            .frame(width: geo.size.width / 3)
                         VStack(alignment: .leading) {
                             Text(self.element.name)
                                 .bold()
@@ -168,6 +169,9 @@ struct ElementView: View {
 
 struct ElementView_Previews: PreviewProvider {
     static var previews: some View {
-        ElementView(element: ElementsModel().elements[30])
+        NavigationView {
+        ElementView(element: ElementsModel().elements[118])
+        }
+        .navigationBarTitle(ElementsModel().elements[118].name)
     }
 }
