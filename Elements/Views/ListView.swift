@@ -12,20 +12,21 @@ import ASCollectionView
 struct ListView: View {
     
     private let elements = ElementsModel()
+    private let gridItems = [GridItem(.adaptive(minimum: 100))]
     @State private var showSheet = false
     
     var body: some View {
         NavigationView {
-            ASCollectionView(data: elements.elements) { item, _  in
-                NavigationLink(destination: ElementView(element: item)) {
-                    SquareView(element: item, showAtomicNumber: true, showName: true, showAtomicMass: false)
+            ScrollView {
+                LazyVGrid(columns: gridItems) {
+                    ForEach(elements.elements) { element in
+                        NavigationLink(destination: ElementView(element: element)) {
+                            SquareView(element: element, showAtomicNumber: true, showName: true, showAtomicMass: false)
+                        }
+                    }
                 }
+                .padding()
             }
-            .layout {
-                .grid(layoutMode: .adaptive(withMinItemSize: 100))
-            }
-            
-            .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("🧪 Elements")
             .navigationBarItems(trailing:
                                     Button(action: {
