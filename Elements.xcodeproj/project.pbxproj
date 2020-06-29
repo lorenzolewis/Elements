@@ -21,7 +21,6 @@
 		5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EB248803A200D6D965 /* ElementView.swift */; };
 		5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */; };
 		5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */; };
-		5A78AFC32489451700244B5F /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 5A78AFC22489451700244B5F /* ASCollectionView */; };
 		5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC52489C38700244B5F /* ColorExtension.swift */; };
 		5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC72489CF5100244B5F /* ViewModifiers.swift */; };
 		5A78AFD0248B261600244B5F /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFCF248B261600244B5F /* SquareView.swift */; };
@@ -68,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A78AFC32489451700244B5F /* ASCollectionView in Frameworks */,
 				5ABEE0DE2491238F003C144D /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +195,6 @@
 			);
 			name = Elements;
 			packageProductDependencies = (
-				5A78AFC22489451700244B5F /* ASCollectionView */,
 				5ABEE0DD2491238F003C144D /* SwiftyBeaver */,
 			);
 			productName = Elements;
@@ -229,7 +226,6 @@
 			);
 			mainGroup = 5A0845062486C39500BC0EDB;
 			packageReferences = (
-				5A78AFC12489451700244B5F /* XCRemoteSwiftPackageReference "ASCollectionView" */,
 				5ABEE0DC2491238F003C144D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = 5A0845102486C39500BC0EDB /* Products */;
@@ -486,14 +482,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A78AFC12489451700244B5F /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apptekstudios/ASCollectionView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.1;
-			};
-		};
 		5ABEE0DC2491238F003C144D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
@@ -505,11 +493,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A78AFC22489451700244B5F /* ASCollectionView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A78AFC12489451700244B5F /* XCRemoteSwiftPackageReference "ASCollectionView" */;
-			productName = ASCollectionView;
-		};
 		5ABEE0DD2491238F003C144D /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5ABEE0DC2491238F003C144D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;

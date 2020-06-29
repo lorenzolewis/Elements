@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import ASCollectionView
 
 struct ContentView: View {
     
@@ -29,7 +28,6 @@ struct ContentView: View {
         #endif
         
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
