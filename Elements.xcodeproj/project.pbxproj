@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A0845132486C39500BC0EDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0845122486C39500BC0EDB /* AppDelegate.swift */; };
-		5A0845152486C39500BC0EDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0845142486C39500BC0EDB /* SceneDelegate.swift */; };
 		5A0845172486C39500BC0EDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0845162486C39500BC0EDB /* ContentView.swift */; };
 		5A0845192486C39700BC0EDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0845182486C39700BC0EDB /* Assets.xcassets */; };
 		5A08451C2486C39700BC0EDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A08451B2486C39700BC0EDB /* Preview Assets.xcassets */; };
@@ -24,10 +22,9 @@
 		5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC52489C38700244B5F /* ColorExtension.swift */; };
 		5A78AFC82489CF5100244B5F /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFC72489CF5100244B5F /* ViewModifiers.swift */; };
 		5A78AFD0248B261600244B5F /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFCF248B261600244B5F /* SquareView.swift */; };
-		5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEE0D92491232C003C144D /* UpdateManager.swift */; };
-		5ABEE0DE2491238F003C144D /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABEE0DD2491238F003C144D /* SwiftyBeaver */; };
 		5AD5170024A97E9B0098EDFC /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD516FF24A97E9B0098EDFC /* ListView.swift */; };
 		5AD5170224A97F010098EDFC /* PeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5170124A97F010098EDFC /* PeriodicTableView.swift */; };
+		5AD5170424A982EF0098EDFC /* ElementsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5170324A982EF0098EDFC /* ElementsApp.swift */; };
 		5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */; };
 		5AFCBCC42496731D0051BF3C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCBCC32496731D0051BF3C /* SettingsView.swift */; };
 		5AFCBCC6249673BC0051BF3C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */; };
@@ -35,8 +32,6 @@
 
 /* Begin PBXFileReference section */
 		5A08450F2486C39500BC0EDB /* Elements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elements.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A0845122486C39500BC0EDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A0845142486C39500BC0EDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A0845162486C39500BC0EDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A0845182486C39700BC0EDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A08451B2486C39700BC0EDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,9 +49,9 @@
 		5A78AFC52489C38700244B5F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5A78AFC72489CF5100244B5F /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A78AFCF248B261600244B5F /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
-		5ABEE0D92491232C003C144D /* UpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		5AD516FF24A97E9B0098EDFC /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5AD5170124A97F010098EDFC /* PeriodicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableView.swift; sourceTree = "<group>"; };
+		5AD5170324A982EF0098EDFC /* ElementsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsApp.swift; sourceTree = "<group>"; };
 		5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		5AFCBCC32496731D0051BF3C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -67,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ABEE0DE2491238F003C144D /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +71,7 @@
 		5A0845062486C39500BC0EDB = {
 			isa = PBXGroup;
 			children = (
+				5AD5170324A982EF0098EDFC /* ElementsApp.swift */,
 				5A1B6BCA248B5B01007EE626 /* .gitignore */,
 				5A0845112486C39500BC0EDB /* Elements */,
 				5AD516FE24A97DF10098EDFC /* macOS */,
@@ -96,13 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				5A256AEA24A97C4D00AFC998 /* Elements.entitlements */,
-				5ABEE0DB24912331003C144D /* Managers */,
 				5A78AFC42489C37800244B5F /* Extensions */,
 				5A08452B2486C3E100BC0EDB /* Models */,
 				5A70C5E92487E94B00D6D965 /* ViewModel */,
 				5A70C5EA2488039800D6D965 /* Views */,
-				5A0845122486C39500BC0EDB /* AppDelegate.swift */,
-				5A0845142486C39500BC0EDB /* SceneDelegate.swift */,
 				5A0845182486C39700BC0EDB /* Assets.xcassets */,
 				5A08451D2486C39700BC0EDB /* LaunchScreen.storyboard */,
 				5A0845202486C39700BC0EDB /* Info.plist */,
@@ -163,14 +155,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5ABEE0DB24912331003C144D /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				5ABEE0D92491232C003C144D /* UpdateManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		5AD516FE24A97DF10098EDFC /* macOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +179,6 @@
 			);
 			name = Elements;
 			packageProductDependencies = (
-				5ABEE0DD2491238F003C144D /* SwiftyBeaver */,
 			);
 			productName = Elements;
 			productReference = 5A08450F2486C39500BC0EDB /* Elements.app */;
@@ -226,7 +209,6 @@
 			);
 			mainGroup = 5A0845062486C39500BC0EDB;
 			packageReferences = (
-				5ABEE0DC2491238F003C144D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = 5A0845102486C39500BC0EDB /* Products */;
 			projectDirPath = "";
@@ -259,7 +241,6 @@
 			files = (
 				5A08452E2486C3EB00BC0EDB /* ElementsModel.swift in Sources */,
 				5A78AFD0248B261600244B5F /* SquareView.swift in Sources */,
-				5A0845132486C39500BC0EDB /* AppDelegate.swift in Sources */,
 				5AD5170024A97E9B0098EDFC /* ListView.swift in Sources */,
 				5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */,
 				5AFCBCC42496731D0051BF3C /* SettingsView.swift in Sources */,
@@ -269,8 +250,7 @@
 				5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */,
 				5A1B6BC9248B3872007EE626 /* StringExtension.swift in Sources */,
 				5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */,
-				5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */,
-				5A0845152486C39500BC0EDB /* SceneDelegate.swift in Sources */,
+				5AD5170424A982EF0098EDFC /* ElementsApp.swift in Sources */,
 				5AD5170224A97F010098EDFC /* PeriodicTableView.swift in Sources */,
 				5A0845172486C39500BC0EDB /* ContentView.swift in Sources */,
 				5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */,
@@ -480,25 +460,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5ABEE0DC2491238F003C144D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5ABEE0DD2491238F003C144D /* SwiftyBeaver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5ABEE0DC2491238F003C144D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
-			productName = SwiftyBeaver;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A0845072486C39500BC0EDB /* Project object */;
 }

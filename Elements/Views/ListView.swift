@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ListView: View {
-    private let elements = ElementsModel()
+    let elementsModel: ElementsModel
     private let gridItems = [GridItem(.adaptive(minimum: 80))]
     @State private var showSheet = false
     
@@ -17,7 +17,7 @@ struct ListView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridItems){
-                    ForEach(elements.elements) { element  in
+                    ForEach(elementsModel.elements) { element  in
                         
                         NavigationLink(destination: ElementView(element: element)) {
                             SquareView(element: element, showAtomicNumber: true, showName: true, showAtomicMass: false)
@@ -48,6 +48,6 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ListView(elementsModel: ElementsModel())
     }
 }

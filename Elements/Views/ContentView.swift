@@ -14,12 +14,13 @@ struct ContentView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     #endif
     
+    let elementsModel: ElementsModel
     
     @ViewBuilder var body: some View {
         
         #if os(iOS)
         if horizontalSizeClass == .compact {
-            ListView()
+            ListView(elementsModel: elementsModel)
         } else {
             PeriodicTableView()
         }
@@ -32,6 +33,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(elementsModel: ElementsModel())
     }
 }
