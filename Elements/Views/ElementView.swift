@@ -20,7 +20,7 @@ struct ElementView: View {
                     
                     // Title
                     HStack {
-                        PeriodicSquareView(element: self.element, geo: geo)
+                        SquareView(element: self.element, showAtomicNumber: true, showName: true, showAtomicMass: true)
                         VStack(alignment: .leading) {
                             Text(self.element.name)
                                 .bold()
