@@ -27,8 +27,11 @@ struct SquareView: View {
                 Text(element.symbol)
                     .font(.largeTitle)
                     .minimumScaleFactor(0.01)
+                    .lineLimit(1)
                 if showName {
                     Text(element.name)
+                        .minimumScaleFactor(0.01)
+                        .lineLimit(1)
                 }
             }
             
@@ -47,6 +50,7 @@ struct SquareView: View {
 }
 
 struct SquareView_Previews: PreviewProvider {
+    
     static var previews: some View {
         Group {
             SquareView(element: ElementsModel().elements[30], showAtomicNumber: false, showName: false, showAtomicMass: false)
