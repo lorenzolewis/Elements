@@ -10,14 +10,19 @@ import SwiftUI
 
 struct PeriodicTableView: View {
     
+    let elementsModel: ElementsModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: elementsModel.maxX)) {
+            ForEach(elementsModel.elements) { element in
+                SquareView(element: element, showAtomicNumber: false, showName: false, showAtomicMass: false)
+            }
+        }
     }
 }
 
 struct PeriodicTableView_Previews: PreviewProvider {
     static var previews: some View {
-        PeriodicTableView()
+        PeriodicTableView(elementsModel: ElementsModel())
     }
 }

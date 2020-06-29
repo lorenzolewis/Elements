@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import ASCollectionView
 
 struct ElementView: View {
     
@@ -166,34 +165,6 @@ struct ElementView: View {
         .navigationBarTitle(Text(self.element.name), displayMode: .inline)
     }
 }
-
-func createGroupModel(_ element: Element) -> [GroupModel] {
-    var groupModel = [GroupModel]()
-    
-    groupModel.append(GroupModel(title: "State", value: element.phase.rawValue))
-    
-    if let boil = element.boil {
-        groupModel.append(GroupModel(title: "Boil", value: String(format: "%g", boil)))
-    }
-    
-    if let melt = element.melt {
-        groupModel.append(GroupModel(title: "Melt", value: String(format: "%g", melt)))
-    }
-    
-    if let molarHeat = element.molarHeat {
-        groupModel.append(GroupModel(title: "Molar Heat", value: String(format: "%g", molarHeat) + " J/mol·K"))
-    }
-    
-    if let density = element.density {
-        groupModel.append(GroupModel(title: "Density", value: String(format: "%g", density) + " g/L"))
-    }
-    
-    //electronaffinity
-    //elecronegativitypualing
-    
-    return groupModel
-}
-
 
 
 struct ElementView_Previews: PreviewProvider {

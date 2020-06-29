@@ -11,6 +11,7 @@ import SwiftUI
 struct ElementsModel {
     
     let elements: [Element]
+    let maxX: Int
     var categories: [String] {
         
         var array = [String]()
@@ -31,6 +32,15 @@ struct ElementsModel {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let jsonData = try! decoder.decode(ElementsArray.self, from: data)
         elements = jsonData.elements
+        
+        var tempX = 0
+        
+        for element in elements {
+            if element.xpos > tempX {
+                tempX = element.xpos
+            }
+        }
+        maxX = tempX
     }
     
     var filteredElements: [Element] {

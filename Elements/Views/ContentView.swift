@@ -22,7 +22,7 @@ struct ContentView: View {
         if horizontalSizeClass == .compact {
             ListView(elementsModel: elementsModel)
         } else {
-            PeriodicTableView()
+            PeriodicTableView(elementsModel: elementsModel)
         }
         #else
         PeriodicTableView()
