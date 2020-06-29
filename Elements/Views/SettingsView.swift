@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State var viewModel = SettingsViewModel()
+    @ObservedObject var viewModel = SettingsViewModel()
     
     var body: some View {
         NavigationView {

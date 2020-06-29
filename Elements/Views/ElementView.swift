@@ -20,8 +20,7 @@ struct ElementView: View {
                     
                     // Title
                     HStack {
-                        SquareView(element: element, showAtomicNumber: true, showName: false, showAtomicMass: true)
-                            .frame(width: geo.size.width / 3)
+                        PeriodicSquareView(element: self.element, geo: geo)
                         VStack(alignment: .leading) {
                             Text(self.element.name)
                                 .bold()
@@ -37,13 +36,13 @@ struct ElementView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("group")
-                                .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                             Text("\(self.element.xpos)")
                             
                             VStack(alignment: .leading) {
                                 Text("phase")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
-                                Text(self.element.phase)
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                                Text(self.element.phase.rawValue)
                             }
                         }
                         Spacer()
@@ -52,7 +51,7 @@ struct ElementView: View {
                             if self.element.electronegativityPauling != nil {
                                 VStack(alignment: .leading) {
                                     Text("e. negativity")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                     Text(String(format: "%g", self.element.electronegativityPauling!))
                                 }
                                 
@@ -60,7 +59,7 @@ struct ElementView: View {
                             if self.element.melt != nil {
                                 VStack(alignment: .leading) {
                                     Text("melt point")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                     Text(formatTemperature(self.element.melt!))
                                 }
                             }
@@ -71,14 +70,14 @@ struct ElementView: View {
                             if self.element.density != nil {
                                 VStack(alignment: .leading) {
                                     Text("density")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                     Text(String(format: "%g", self.element.density!) + " g/L")
                                 }
                             }
                             if self.element.boil != nil {
                                 VStack(alignment: .leading) {
                                     Text("boil point")
-                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                        .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                     Text(formatTemperature(self.element.boil!))
                                 }
                             }
@@ -91,7 +90,7 @@ struct ElementView: View {
                         if self.element.appearance != nil {
                             Group {
                                 Text("appearance")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                 Text(self.element.appearance!.capitalizingFirstLetter())
                             }
                         }
@@ -99,16 +98,16 @@ struct ElementView: View {
                         if self.element.color != nil {
                             Group {
                                 Text("color")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                 Text(self.element.color!.capitalized)
                             }
                         }
                         
                         Text("electron configuration")
-                            .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
-
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
+                        
                         if self.element.electronConfigurationSemantic != nil {
-                            Text(self.element.electronConfigurationSemantic!)
+                            Text(formatElectronConfiguration(self.element.electronConfigurationSemantic!))
                             if self.element.electronConfigurationSemantic!.contains("*") {
                                 Text("(Configuration not yet confirmed)")
                                     .foregroundColor(.secondary)
@@ -120,7 +119,7 @@ struct ElementView: View {
                     }
                     Group {
                         Text("summary")
-                            .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                         Text(self.element.summary)
                     }
                     
@@ -128,7 +127,7 @@ struct ElementView: View {
                         if self.element.discoveredBy != nil {
                             Group {
                                 Text("discovered by")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                 Text(self.element.discoveredBy!.capitalized)
                             }
                         }
@@ -136,7 +135,7 @@ struct ElementView: View {
                         if self.element.namedBy != nil {
                             Group {
                                 Text("named by")
-                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                                    .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                                 Text(self.element.namedBy!.capitalized)
                             }
                         }
@@ -144,7 +143,7 @@ struct ElementView: View {
                     
                     VStack(alignment: .leading) {
                         Text("learn more")
-                            .modifier(ElementInfoHeading(color: elementColor[self.element.category] ?? Color.black))
+                            .modifier(ElementInfoHeading(color: elementColor[self.element.category]!))
                         Button(action: {
                             guard let url = URL(string: self.element.source) else {return}
                             UIApplication.shared.open(url)
@@ -167,11 +166,70 @@ struct ElementView: View {
     }
 }
 
+func createGroupModel(_ element: Element) -> [GroupModel] {
+    var groupModel = [GroupModel]()
+    
+    groupModel.append(GroupModel(title: "State", value: element.phase.rawValue))
+    
+    if let boil = element.boil {
+        groupModel.append(GroupModel(title: "Boil", value: String(format: "%g", boil)))
+    }
+    
+    if let melt = element.melt {
+        groupModel.append(GroupModel(title: "Melt", value: String(format: "%g", melt)))
+    }
+    
+    if let molarHeat = element.molarHeat {
+        groupModel.append(GroupModel(title: "Molar Heat", value: String(format: "%g", molarHeat) + " J/mol·K"))
+    }
+    
+    if let density = element.density {
+        groupModel.append(GroupModel(title: "Density", value: String(format: "%g", density) + " g/L"))
+    }
+    
+    //electronaffinity
+    //elecronegativitypualing
+    
+    return groupModel
+}
+
+
+
 struct ElementView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-        ElementView(element: ElementsModel().elements[118])
-        }
-        .navigationBarTitle(ElementsModel().elements[118].name)
+        ElementView(element: Element(name: "Oxygen",
+                                     appearance: "beautiful mustard gas",
+                                     atomicMass: 15.999,
+                                     boil: 90.188,
+                                     category: "diatomic nonmetal but I like to be complicated",
+                                     color: "yellow",
+                                     density: 1.429,
+                                     discoveredBy: "Carl Wilhelm Scheele",
+                                     melt: 54.36,
+                                     molarHeat: nil,
+                                     namedBy: "Antoine Lavoisier",
+                                     number: 8,
+                                     period: 2,
+                                     phase: .Gas,
+                                     source: "https://en.wikipedia.org/wiki/Oxygen",
+                                     spectralImg: "https://en.wikipedia.org/wiki/File:Oxygen_spectre.jpg",
+                                     summary: "Oxygen is a chemical but I'm not going to stop there because I need to test how many lines I can fit into this baby while keeping it still beautiful and pristine!",
+                                     symbol: "O",
+                                     xpos: 16,
+                                     ypos: 2,
+                                     shells: [2, 6],
+                                     electronConfiguration: "1s2 2s2 2p4",
+                                     electronAffinity: 140.9760,
+                                     electronegativityPauling: 3.44,
+                                     ionizationEnergies: [
+                                        1313.9,
+                                        3388.3,
+                                        5300.5,
+                                        7469.2,
+                                        10989.5,
+                                        13326.5,
+                                        71330,
+                                        84078.0
+        ], electronConfigurationSemantic: "s1s"))
     }
 }

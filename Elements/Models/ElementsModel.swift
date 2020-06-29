@@ -8,51 +8,41 @@
 
 import SwiftUI
 
-public struct Element: Decodable, Identifiable {
-    public let id = UUID()
-    let name: String
-    let appearance: String?
-    let atomicMass: Double
-    let boil: Double?
-    let category: String
-    let color: String?
-    let density: Double?
-    let discoveredBy: String?
-    let melt, molarHeat: Double?
-    let namedBy: String?
-    let number, period: Int
-    let phase: String
-    let source: String
-    let spectralImg: String?
-    let summary, symbol: String
-    let xpos, ypos: Int
-    let shells: [Int]
-    let electronConfiguration: String?
-    let electronAffinity, electronegativityPauling: Double?
-    let ionizationEnergies: [Double]?
-    var electronConfigurationSemantic: String?
-}
-
 struct ElementsModel {
     
     let elements: [Element]
+    var categories: [String] {
+        
+        var array = [String]()
+        
+        for element in elements {
+            if !array.contains(element.category) {
+                array.append(element.category)
+            }
+        }
+        print(array)
+        return array
+    }
     
     init() {
         let url = Bundle.main.url(forResource: "PeriodicTableJSON", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let jsonData = try! decoder.decode(JSONElementsArray.self, from: data)
-        elements = formatElectronConfiguration(jsonData.elements)
+        let jsonData = try! decoder.decode(ElementsArray.self, from: data)
+        elements = jsonData.elements
     }
     
-    struct JSONElementsArray: Decodable {
-        var elements: [Element]
+    var filteredElements: [Element] {
+        switch categories {
+        default:
+            return elements.filter { $0.category == "" }
+        }
     }
 }
 
-func formatElectronConfiguration(_ elements: [Element]) -> [Element] {
-    var elements = elements
+func formatElectronConfiguration(_ electronConfiguration: String) -> String {
+    var formatted = electronConfiguration
     let unicodeDictionary = [
         0 : "\u{2070}",
         1 : "\u{00B9}",
@@ -66,19 +56,15 @@ func formatElectronConfiguration(_ elements: [Element]) -> [Element] {
         9 : "\u{2079}"
     ]    
     
-    for (index, element) in elements.enumerated() {
-        if var configuration = element.electronConfigurationSemantic {
-            for int in 0...9 {
-                let regexSecondDigit = try! NSRegularExpression(pattern: String("\(int)" + #"(?=[\s]|$)"#))
-                configuration = regexSecondDigit.stringByReplacingMatches(in: configuration,  range: NSRange(0..<configuration.utf16.count), withTemplate: unicodeDictionary[int]!)
-                
-                let regexFirstDigit = try! NSRegularExpression(pattern: String("(?<=[a-z])" + "\(int)"))
-                configuration = regexFirstDigit.stringByReplacingMatches(in: configuration,  range: NSRange(0..<configuration.utf16.count), withTemplate: unicodeDictionary[int]!)
-            }
-            elements[index].electronConfigurationSemantic = configuration
-        }
+    for int in 0...9 {
+        let regexSecondDigit = try! NSRegularExpression(pattern: String("\(int)" + #"(?=[\s]|$)"#))
+        formatted = regexSecondDigit.stringByReplacingMatches(in: formatted,  range: NSRange(0..<formatted.utf16.count), withTemplate: unicodeDictionary[int]!)
+        
+        let regexFirstDigit = try! NSRegularExpression(pattern: String("(?<=[a-z])" + "\(int)"))
+        formatted = regexFirstDigit.stringByReplacingMatches(in: formatted,  range: NSRange(0..<formatted.utf16.count), withTemplate: unicodeDictionary[int]!)
     }
-    return elements
+    
+    return formatted
 }
 
 func formatTemperature(_ temp: Double) -> String {
@@ -123,3 +109,40 @@ let elementColor: [String : Color] = [
     "unknown, predicted to be noble gas" : Color("nobleGasses"),
     "unknown, but predicted to be an alkali metal" : Color("alkaliMetals")
 ]
+
+public struct ElementsArray: Decodable {
+    public var elements: [Element]
+}
+
+public struct Element: Decodable, Identifiable {
+    public let id = UUID()
+    let name: String
+    let appearance: String?
+    let atomicMass: Double?
+    let boil: Double?
+    let category: String
+    let color: String?
+    let density: Double?
+    let discoveredBy: String?
+    let melt, molarHeat: Double?
+    let namedBy: String?
+    let number, period: Int
+    let phase: Phase
+    let source: String
+    let spectralImg: String?
+    let summary, symbol: String
+    let xpos, ypos: Int
+    let shells: [Int]
+    let electronConfiguration: String?
+    let electronAffinity, electronegativityPauling: Double?
+    let ionizationEnergies: [Double]?
+    let electronConfigurationSemantic: String?
+}
+
+enum Phase: String, Decodable {
+    case gas, Gas
+    case liquid, Liquid
+    case solid, Solid
+}
+
+
