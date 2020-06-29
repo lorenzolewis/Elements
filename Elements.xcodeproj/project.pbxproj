@@ -19,7 +19,6 @@
 		5A1B6BCD248B5D92007EE626 /* ShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B6BCC248B5D92007EE626 /* ShellView.swift */; };
 		5A70C5E824870CC400D6D965 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */; };
 		5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EB248803A200D6D965 /* ElementView.swift */; };
-		5A70C5EE2488244E00D6D965 /* ElementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5ED2488244E00D6D965 /* ElementCellView.swift */; };
 		5A70C5F02488644D00D6D965 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */; };
 		5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */; };
 		5A78AFC32489451700244B5F /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 5A78AFC22489451700244B5F /* ASCollectionView */; };
@@ -49,7 +48,6 @@
 		5A1B6BCC248B5D92007EE626 /* ShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellView.swift; sourceTree = "<group>"; };
 		5A70C5E724870CC400D6D965 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
 		5A70C5EB248803A200D6D965 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
-		5A70C5ED2488244E00D6D965 /* ElementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCellView.swift; sourceTree = "<group>"; };
 		5A70C5EF2488644D00D6D965 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5A70C5F324887A6D00D6D965 /* PeriodicTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewModel.swift; sourceTree = "<group>"; };
 		5A78AFC52489C38700244B5F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			children = (
 				5A0845162486C39500BC0EDB /* ContentView.swift */,
 				5AFCBCC32496731D0051BF3C /* SettingsView.swift */,
-				5A70C5ED2488244E00D6D965 /* ElementCellView.swift */,
 				5A70C5EB248803A200D6D965 /* ElementView.swift */,
 				5A78AFCF248B261600244B5F /* SquareView.swift */,
 				5A1B6BCC248B5D92007EE626 /* ShellView.swift */,
@@ -252,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A08452E2486C3EB00BC0EDB /* ElementsModel.swift in Sources */,
-				5A70C5EE2488244E00D6D965 /* ElementCellView.swift in Sources */,
 				5A78AFD0248B261600244B5F /* SquareView.swift in Sources */,
 				5A0845132486C39500BC0EDB /* AppDelegate.swift in Sources */,
 				5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */,
