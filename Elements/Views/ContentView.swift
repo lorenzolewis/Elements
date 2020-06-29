@@ -16,14 +16,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ASCollectionView(data: elements.elements) { item, _  in
-                ElementCellView(element: item, color: elementColor[item.category]!)
+            ASCollectionView(data: elements.elements) { element, _  in
+                
+                NavigationLink(destination: ElementView(element: element)) {
+                
+                SquareView(element: element, showAtomicNumber: true, showName: true, showAtomicMass: false)
+                }
             }
             .layout {
-                .grid(layoutMode: .adaptive(withMinItemSize: 100),
-                      itemSpacing: 5,
-                      lineSpacing: 5,
-                      itemSize: .absolute(100))
+                .grid(layoutMode: .adaptive(withMinItemSize: 100))
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("🧪 Elements")
