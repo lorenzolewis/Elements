@@ -11,40 +11,25 @@ import ASCollectionView
 
 struct ContentView: View {
     
-    private let elements = ElementsModel()
-    @State private var showSheet = false
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    #endif
     
-    var body: some View {
-        NavigationView {
-            ASCollectionView(data: elements.elements) { element, _  in
-                
-                NavigationLink(destination: ElementView(element: element)) {
-                
-                SquareView(element: element, showAtomicNumber: true, showName: true, showAtomicMass: false)
-                }
-            }
-            .layout {
-                .grid(layoutMode: .adaptive(withMinItemSize: 100))
-            }
-            .edgesIgnoringSafeArea(.all)
-            .navigationBarTitle("🧪 Elements")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showSheet.toggle()
-                    print("Hello")
-                }) {
-                    HStack {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-                    .sheet(isPresented: $showSheet, content: {
-                        SettingsView()
-                    })
-                }
-                
-            )}
+    
+    @ViewBuilder var body: some View {
+        
+        #if os(iOS)
+        if horizontalSizeClass == .compact {
+            ListView()
+        } else {
+            PeriodicTableView()
+        }
+        #else
+        PeriodicTableView()
+        #endif
         
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -27,6 +27,8 @@
 		5A78AFD0248B261600244B5F /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78AFCF248B261600244B5F /* SquareView.swift */; };
 		5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEE0D92491232C003C144D /* UpdateManager.swift */; };
 		5ABEE0DE2491238F003C144D /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 5ABEE0DD2491238F003C144D /* SwiftyBeaver */; };
+		5AD5170024A97E9B0098EDFC /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD516FF24A97E9B0098EDFC /* ListView.swift */; };
+		5AD5170224A97F010098EDFC /* PeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5170124A97F010098EDFC /* PeriodicTableView.swift */; };
 		5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */; };
 		5AFCBCC42496731D0051BF3C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCBCC32496731D0051BF3C /* SettingsView.swift */; };
 		5AFCBCC6249673BC0051BF3C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */; };
@@ -54,6 +56,8 @@
 		5A78AFC72489CF5100244B5F /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A78AFCF248B261600244B5F /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5ABEE0D92491232C003C144D /* UpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		5AD516FF24A97E9B0098EDFC /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		5AD5170124A97F010098EDFC /* PeriodicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableView.swift; sourceTree = "<group>"; };
 		5AD81AB4248C43DE00E7DB5D /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		5AFCBCC32496731D0051BF3C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5AFCBCC5249673BC0051BF3C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		5A0845112486C39500BC0EDB /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				5A256AEA24A97C4D00AFC998 /* Elements.entitlements */,
 				5ABEE0DB24912331003C144D /* Managers */,
 				5A78AFC42489C37800244B5F /* Extensions */,
 				5A08452B2486C3E100BC0EDB /* Models */,
@@ -140,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				5A0845162486C39500BC0EDB /* ContentView.swift */,
+				5AD5170124A97F010098EDFC /* PeriodicTableView.swift */,
+				5AD516FF24A97E9B0098EDFC /* ListView.swift */,
 				5AFCBCC32496731D0051BF3C /* SettingsView.swift */,
 				5A70C5EB248803A200D6D965 /* ElementView.swift */,
 				5A78AFCF248B261600244B5F /* SquareView.swift */,
@@ -169,7 +176,6 @@
 		5AD516FE24A97DF10098EDFC /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				5A256AEA24A97C4D00AFC998 /* Elements.entitlements */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				5A08452E2486C3EB00BC0EDB /* ElementsModel.swift in Sources */,
 				5A78AFD0248B261600244B5F /* SquareView.swift in Sources */,
 				5A0845132486C39500BC0EDB /* AppDelegate.swift in Sources */,
+				5AD5170024A97E9B0098EDFC /* ListView.swift in Sources */,
 				5A78AFC62489C38700244B5F /* ColorExtension.swift in Sources */,
 				5AFCBCC42496731D0051BF3C /* SettingsView.swift in Sources */,
 				5A70C5F424887A6D00D6D965 /* PeriodicTableViewModel.swift in Sources */,
@@ -268,6 +275,7 @@
 				5AD81AB5248C43DE00E7DB5D /* GroupModel.swift in Sources */,
 				5ABEE0DA2491232C003C144D /* UpdateManager.swift in Sources */,
 				5A0845152486C39500BC0EDB /* SceneDelegate.swift in Sources */,
+				5AD5170224A97F010098EDFC /* PeriodicTableView.swift in Sources */,
 				5A0845172486C39500BC0EDB /* ContentView.swift in Sources */,
 				5A70C5EC248803A200D6D965 /* ElementView.swift in Sources */,
 				5AFCBCC6249673BC0051BF3C /* SettingsViewModel.swift in Sources */,
